@@ -5,7 +5,7 @@ import NavBar from '../../components/NavBar';
 function HomePage(): React.ReactElement {
 
   return (
-    <div className='flex flex-col w-full h-full themeBg'>
+    <div className='px-5 flex flex-col w-full h-full themeBg md:px-4'>
       <NavBar />
       <Content />
     </div>

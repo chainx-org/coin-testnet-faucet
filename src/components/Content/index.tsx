@@ -15,8 +15,8 @@ function Content(): React.ReactElement {
   }
   return (
     <div className='flex flex-col items-center justify-center'>
-        <h1 className='font-PingFang text-title font-semibold text-black-darker mb-8'>Coin Testnet Faucet</h1>
-        <div className='w-424 h-304 bg-white-light shadow-content rounded-2xl px-4 pt-6 pb-8'>
+        <h1 className='font-PingFang text-2xl font-semibold text-black-darker mb-8 mt-12 md:text-title'>Coin Testnet Faucet</h1>
+        <div className='w-full h-304 bg-white-light shadow-content rounded-2xl px-4 pt-6 pb-8 md:w-424'>
             {/* <TokenSelect /> */}
             <div className='flex flex-col justify-center w-full'>
                 <div className='font-xs font-PingFang font-normal text-black-darker mb-1'>Token</div>
@@ -27,7 +27,7 @@ function Content(): React.ReactElement {
                     </div>
                     <div className='absolute right-0 top-12 w-152 bg-white-light shadow-coinList rounded-xl'>
                         {
-                            isShow  &&  coinList.map((item)=>{return <div className='cursor-pointer px-4 py-2.5 text-white-darker hover:bg-yellow-light hover:text-yellow-dark' onClick={()=>selectedCoin(item)}>{item}</div>})
+                            isShow  &&  coinList.map((item)=>{return <div className='cursor-pointer px-4 py-2.5 text-white-darker hover:bg-yellow-light hover:text-yellow-dark' onClick={()=>selectedCoin(item)} key={item}>{item}</div>})
                         }
                     </div>
                 </div>
