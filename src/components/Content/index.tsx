@@ -7,11 +7,15 @@ import more from '../../assets/More.svg'
 function Content(): React.ReactElement {
 
   const coinList = ['PCX','KSX','XBTC'];
-  const [CoinSelected, setCoinSelected] = useState('')
+  const [coinSelected, setCoinSelected] = useState('')
+  const [coinAddress, setCoinAddress] = useState('')
   const [isShow, setIsShow] = useState(false)
   function selectedCoin(val:string) {
     setCoinSelected(val)
     setIsShow(!isShow)
+  }
+  function addressChange(val:string) {
+    setCoinAddress(val)
   }
   return (
     <div className='flex flex-col items-center justify-center'>
@@ -22,7 +26,7 @@ function Content(): React.ReactElement {
                 <div className='font-xs font-PingFang font-normal text-black-darker mb-1'>Token</div>
                 <div className='flex relative'>
                     <div onClick={()=>setIsShow(!isShow)} className='flex justify-between w-full bg-black-dark rounded-lg border border-black-lighter px-3 py-2.5 cursor-pointer hover:border-white-lighter'>
-                        <span>{CoinSelected === '' ? <span className='text-black-light'>Select a token</span> : CoinSelected}</span>
+                        <span>{coinSelected === '' ? <span className='text-black-light'>Select a token</span> : coinSelected}</span>
                         <img src={isShow ? arrows : more} alt='arrows' className=''/>
                     </div>
                     <div className='absolute right-0 top-12 w-152 bg-white-light shadow-coinList rounded-xl'>
@@ -34,9 +38,9 @@ function Content(): React.ReactElement {
             </div>
             <div className='flex flex-col justify-center w-full mt-8'>
                 <div className='font-xs font-PingFang font-normal text-black-darker mb-1'>Address</div>
-                <input className='addressIpt' placeholder="Enter your address" onChange={(e)=>console.log(e.target.value)}/>
+                <input className='addressIpt' placeholder="Enter your address" onChange={(e)=>addressChange(e.target.value)}/>
             </div>
-            <Button className=''>Obtain</Button> 
+            <Button className={ coinSelected && coinAddress && 'obtained'}>Obtain</Button> 
         </div>
     </div>
   );
