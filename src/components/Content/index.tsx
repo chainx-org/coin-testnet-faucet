@@ -45,8 +45,7 @@ function Content(): React.ReactElement {
         return '';
     }
   };
-  console.log(process.env.REQUEST_URL)
-  console.log(process.env)
+  console.log(process.env.REACT_APP_REQUEST_URL)
 
   const transmit = async () => {
     if (coinSelected?.name && coinAddress) {
@@ -59,7 +58,7 @@ function Content(): React.ReactElement {
           message: 'Transaction confirmation'
         });
         setIsBtnDisabled(true);
-        const result = await axios.post(`${process.env.REQUEST_URL!}endpoint`, {
+        const result = await axios.post(`https://faucet-server-pre.chainx.cc/endpoint`, {
           'address': coinAddress,
           'amount': '5',
           'url': currentUrl
