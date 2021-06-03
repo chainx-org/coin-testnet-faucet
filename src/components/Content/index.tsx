@@ -45,7 +45,6 @@ function Content(): React.ReactElement {
         return '';
     }
   };
-  console.log('proccess', process.env.NODE_ENV)
 
   const transmit = async () => {
     if (coinSelected?.name && coinAddress) {
