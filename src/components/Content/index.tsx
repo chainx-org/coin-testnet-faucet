@@ -45,6 +45,7 @@ function Content(): React.ReactElement {
         return '';
     }
   };
+  console.log('proccess', process.env.NODE_ENV)
 
   const transmit = async () => {
     if (coinSelected?.name && coinAddress) {
@@ -57,7 +58,7 @@ function Content(): React.ReactElement {
           message: 'Transaction confirmation'
         });
         setIsBtnDisabled(true);
-        const result = await axios.post('http://localhost:5555/endpoint', {
+        const result = await axios.post(`${process.env.REQUEST_URL!}endpoint`, {
           'address': coinAddress,
           'amount': '5',
           'url': currentUrl
