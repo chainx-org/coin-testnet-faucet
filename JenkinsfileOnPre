@@ -17,14 +17,14 @@ pipeline {
 
 
   stages {
-    
+
     stage('拉取代码') {
       steps {
         git(branch: 'pre', url: 'https://github.com/chainx-org/coin-testnet-faucet', credentialsId: 'github-id', changelog: true, poll: false)
       }
     }
 
-   
+
     stage('推送镜像') {
       steps {
         container('base') {
@@ -50,15 +50,14 @@ pipeline {
               ])
               {
                 sh 'envsubst <  deploy/pre/deploy-faucet.yaml | kubectl apply -f -'
-                sh 'envsubst <  deploy/pre/deploy-faucet-svc.yaml | kubectl apply -f -'
               }
             }
 
         }
 
       }
-      
+
     }
-  
+
   }
 }
