@@ -4,7 +4,7 @@ import ChainxLogo from '../../assets/ChainX_logo.svg'
 function NavBar(): React.ReactElement {
 
   return (
-    <div className=''>
+    <div className='flex items-center h-15'>
         <img src={ChainxLogo} alt='ChainxLogo' />
     </div>
   );
