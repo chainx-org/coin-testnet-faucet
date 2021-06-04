@@ -99,7 +99,7 @@ input::-ms-input-placeholder {
   color: #FFFFFF !important;
   background: #B8B8B9 !important;
   border-radius: 12px !important;
-  margin-top: 44px;
+  margin-top: 24px;
 }
 .ant-btn:hover, .ant-btn:focus {
   color: #573702 !important;

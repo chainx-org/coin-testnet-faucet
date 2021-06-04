@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Button, notification } from 'antd';
-
 import axios from 'axios';
 import { CheckCircleTwoTone, InfoCircleOutlined, LoadingOutlined } from '@ant-design/icons';
 import TokenInput from './TokenInput';
@@ -27,6 +26,7 @@ function Content(): React.ReactElement {
     }
   };
   console.log(process.env.REACT_APP_REQUEST_URL)
+  console.log(process.env)
   console.log(process.env.REQUEST_URL)
 
   const transmit = async () => {
