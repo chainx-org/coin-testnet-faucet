@@ -40,7 +40,7 @@ function Content(): React.ReactElement {
           message: 'Transaction confirmation'
         });
         setIsBtnDisabled(true);
-        const result = await axios.post(`https://faucet-server.chainx.cc/endpoint`, {
+        const result = await axios.post(`https://faucet-server-pre.chainx.cc/endpoint`, {
           'address': coinAddress,
           'amount': '5',
           'url': currentUrl
