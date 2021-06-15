@@ -42,7 +42,7 @@ function Content(): React.ReactElement {
         setIsBtnDisabled(true);
         const result = await axios.post(`https://faucet-server-pre.chainx.cc/endpoint`, {
           'address': coinAddress,
-          'amount': '5',
+          'amount': '50',
           'url': currentUrl
         });
         if (result.data === 'LIMIT') {
